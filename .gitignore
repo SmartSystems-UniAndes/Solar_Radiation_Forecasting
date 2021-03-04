@@ -2,4 +2,5 @@
 .idea
 *__pycache__*
 *.csv
+!data/GHI_sa.csv
 .ipynb_checkpoints

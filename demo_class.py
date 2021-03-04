@@ -86,14 +86,14 @@ class Demo:
 
         return y_hat
 
-    def __plot(self, y_true, y_hat):
+    def __plot(self, y_true, y_hat, past_hist):
         raw_test_data = self.scaler.inverse_transform(self.test_data)
         y_true = self.scaler.inverse_transform(y_true)
 
-        hist = raw_test_data[self.day_or_week - 48:self.day_or_week]
+        hist = raw_test_data[self.day_or_week - past_hist:self.day_or_week]
         hist = np.hstack((hist, y_true))
 
-        time = range(48, 48 + y_hat.shape[0])
+        time = range(past_hist, past_hist + y_hat.shape[0])
 
         plt.figure(figsize=(7, 5))
         plt.plot(hist, 'r', label='Actual', linewidth=1)
@@ -123,7 +123,7 @@ class Demo:
         if self.mode == "daily_forecasting":
             x, y = self.__load_data(in_time_steps=168, out_time_steps=24)
         elif self.mode == "weekly_forecasting":
-            x, y = self.__load_data(in_time_steps=672, out_time_steps=168)
+            x, y = self.__load_data(in_time_steps=336, out_time_steps=168)
 
         print("Loading model...")
         self.__load_model()
@@ -131,8 +131,13 @@ class Demo:
         print("Predicting data...")
         y_hat = self.__predict(x)
 
-        self.__plot(y, y_hat)
+        if self.mode == "daily_forecasting":
+            self.__plot(y, y_hat, past_hist=48)
+        elif self.mode == "weekly_forecasting":
+            self.__plot(y, y_hat, past_hist=0)
+
         mse_r, mae, r2 = self.__get_metrics(y, y_hat)
+
         print("---------------------------")
         print("----------RESULTS----------")
         print("---------------------------")
@@ -141,4 +146,4 @@ class Demo:
         print(f"R2:     {mse_r}")
         print("---------------------------")
 
-        return True
+        pass

@@ -7,5 +7,8 @@ weekly_folder = "weekly_forecasting"
 data_path = "data/GHI_sa.csv"
 
 if __name__ == "__main__":
-    demo = Demo("daily_forecasting", model_path, data_path, day_or_week=(24*31) + (24*28) + (24*31))
+    demo = Demo(mode="weekly_forecasting",
+                models_path=model_path,
+                data_path=data_path,
+                day_or_week=672*34)
     demo.run()
