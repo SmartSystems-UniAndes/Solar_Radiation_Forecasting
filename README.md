@@ -3,7 +3,7 @@
 ## About
 
 This repository contains the work developed by Gabriel Narvaez et al. in *Machine learning for site-adaptation and solar
-radiation forecasting*. 
+radiation forecasting* [1].
 
 ## Work Environment
 
@@ -40,3 +40,9 @@ $ python demo.py --mode "daily_forecasting" --day_or_week 1416
   year={2021},
   publisher={Elsevier}
 }
+```
+
+## References
+
+[1] Narvaez, G., Giraldo, L. F., Bressan, M., & Pantoja, A. (2020). Machine learning for site-adaptation and solar 
+radiation forecasting. Renewable Energy.

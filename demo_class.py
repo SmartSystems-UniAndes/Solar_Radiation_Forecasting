@@ -143,7 +143,7 @@ class Demo:
         print("---------------------------")
         print(f"MSER:   {mse_r}")
         print(f"MAE:    {mae}")
-        print(f"R2:     {mse_r}")
+        print(f"R2:     {r2}")
         print("---------------------------")
 
         pass
