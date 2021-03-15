@@ -2,8 +2,9 @@
 
 ## About
 
-This repository contains the work developed by Gabriel Narvaez et al. in *Machine learning for site-adaptation and solar
-radiation forecasting* [1].
+This repository contains the work developed by Narvaez, G, et al. in *Machine learning for site-adaptation and solar
+radiation forecasting* [1]. Here is shown the solar radiation forecasting implementation with a RNN composed by LSTM
+units.
 
 ## Work Environment
 
