@@ -4,11 +4,11 @@ from demo_class import Demo
 
 
 def get_parser():
-    parser = argparse.ArgumentParser(description="Fault classification for PV panels Demo")
+    parser = argparse.ArgumentParser(description="Solar Radiation Forecasting Demo")
     parser.add_argument(
         "--models_path",
         default="models",
-        help="Path with the models files (must contain for daily and for weekly forecasting."
+        help="Path with the models files."
     )
     parser.add_argument(
         "--daily_folder_name",
