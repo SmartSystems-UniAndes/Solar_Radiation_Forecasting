@@ -1,4 +1,4 @@
-# Machine learning for site-adaptation and solar radiation forecasting
+# Solar Radiation Forecasting
 
 ## About
 
