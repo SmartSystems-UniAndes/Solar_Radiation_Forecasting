@@ -10,6 +10,10 @@ units.
 
 See [SETUP.md](SETUP.md).
 
+## How it works?
+
+All the project development is self content in the [*Solar_Radiation_Forecasting_LSTM.ipynb*](Solar_Radiation_Forecasting_LSTM.ipynb) notebook, feel free if you want to modify some parameters and run different train experiments.
+
 ## Demo
 
 To use the demo run the demo.py file that has the following arguments:
