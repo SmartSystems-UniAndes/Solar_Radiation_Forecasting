@@ -1,7 +1,7 @@
 import argparse
 
 from demo_class import Demo
-
+import tensorflow as tf
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Solar Radiation Forecasting Demo")
@@ -40,7 +40,15 @@ def get_parser():
 
 if __name__ == "__main__":
     args = get_parser().parse_args()
-
+    
+    gpu = tf.config.list_physical_devices('GPU')[0]
+    try:
+        tf.config.experimental.set_memory_growth(gpu, True)
+        logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+        print(len(gpu), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        print(e)
+    
     demo = Demo(mode=args.mode,
                 models_path=args.models_path,
                 data_path=args.data_path,
